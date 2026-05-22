@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "2.6.1"
+  version: "2.6.9"
 
 package:
   name: agno
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/agno/agno-${{ version }}.tar.gz
-  sha256: 87b49a2c8c1849a5504a2b70f33ccd6e1a2b0c8b279be824040ffbb203f34d06
+  sha256: f9ee6298ee43cfeafc4552613aa5b590bf5635a65d5b222a5da78457f6981f76
 
 build:
   number: 0
