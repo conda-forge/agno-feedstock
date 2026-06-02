@@ -25,7 +25,9 @@ Current build status
 <table><tr>
     <td>All platforms:</td>
     <td>
-      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
+      <a href="https://github.com/conda-forge/agno-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/agno-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
     </td>
   </tr>
 </table>
@@ -153,4 +155,5 @@ Feedstock Maintainers
 
 * [@killua156](https://github.com/killua156/)
 * [@mgorny](https://github.com/mgorny/)
+* [@rxm7706](https://github.com/rxm7706/)
 
