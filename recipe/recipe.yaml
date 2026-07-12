@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
 schema_version: 1
 
 context:
@@ -14,7 +15,10 @@ source:
 build:
   number: 0
   noarch: python
-  script: ${{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - agno = agnoctl.main:app
 
 requirements:
   host:
@@ -23,31 +27,34 @@ requirements:
     - setuptools
   run:
     - python >=${{ python_min }}
+    - agnoctl >=0.1.1
     - docstring_parser
-    - gitpython
     - h11 >=0.16.0
     - httpx
-    - h2
     - packaging
-    - pydantic
     - pydantic-settings
-    - python-dotenv
-    - python-multipart
+    - pydantic
     - pyyaml
     - rich
-    - typer
     - typing_extensions
 
 tests:
   - python:
-      python_version:
-        - ${{ python_min }}.*
-        - "*"
       imports:
         - agno
         - agno.agent
         - agno.models
         - agno.tools
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - pip
+        - python
+    script:
+      - agno --help
 
 about:
   homepage: https://agno.com
